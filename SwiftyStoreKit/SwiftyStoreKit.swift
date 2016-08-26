@@ -126,7 +126,7 @@ public class SwiftyStoreKit {
     public class func purchaseProduct(productId: String, quantity: Int = 1, applicationUsername: String = "", completion: (result: PurchaseResult) -> ()) {
         
         if let product = sharedInstance.store.products[productId] {
-            sharedInstance.purchase(product: product, applicationUsername: applicationUsername, completion: completion)
+            sharedInstance.purchase(product: product, quantity: quantity,  applicationUsername: applicationUsername, completion: completion)
         }
         else {
             retrieveProductsInfo(Set([productId])) { result -> () in
